@@ -30,6 +30,7 @@ body{
     background-repeat: no-repeat;
     padding-bottom: 30px;
     overflow-x: hidden;
+    animation: headeranimation 1s ease-in-out;
 }
 
 @media (min-width: 950px) {
@@ -40,7 +41,6 @@ body{
         margin: 1dvh auto 0 auto;
     }
 }
-
 
 /* --first section header */
 
@@ -105,6 +105,7 @@ body{
         display: flex;
         align-items: center;
         gap: 7.5dvw;
+        animation: nav-animation 1s ease-in-out;
     }
 
     .nav-menu ul{
@@ -119,7 +120,6 @@ body{
         border-radius: 5px;
     }
 }
-
 
 /* img logo */
 
@@ -185,6 +185,7 @@ header .false-div{
     border-radius: 15px;
     padding: 10px;
     overflow-x: auto;
+    animation: table-animation 1s ease-in-out;
 }
 
 .hero-content table thead tr th{
@@ -318,6 +319,7 @@ header .false-div{
         font-size: clamp(1.2rem, 4dvw, 3.5rem);
         text-align: left;
         margin: 0;
+        animation: info-header 1s ease-in-out;
     }
     .hero-info p{
         width: 70%;
@@ -327,6 +329,7 @@ header .false-div{
         margin: 0;
         padding: 0;
         margin-top: 2dvh;
+        animation: info-header 1s ease-in-out;
     }
 }
 
@@ -545,7 +548,7 @@ header .false-div{
 /* THIRD SECTION CONTENT */
 
 .third-section h2{
-    width: 80%;
+    width: 90%;
     color: var(--second-color);
     text-align: center;
     font-weight: bold;
@@ -576,8 +579,14 @@ header .false-div{
     }
 
     .benefit{
-    width: 50%;
-    gap: 10px;
+        width: 50%;
+        gap: 10px;
+    }
+
+    .third-section h2{
+        width: 80%;
+        margin: 20px 0px;
+        padding: 10px 0px;
     }
 }
 
@@ -703,6 +712,8 @@ header .false-div{
     }
     .fourth-section h2{
         margin-bottom: 20px;
+        margin: 20px 0px;
+        padding: 10px 0px;
     }
 }
 
@@ -920,6 +931,7 @@ header .false-div{
 @media (min-width: 950px) {
     .semi-footer{
         width: 100%;
+        margin-top: 10px;
     }
     .semi-footer-container{
         width: 100%;
@@ -965,5 +977,150 @@ header .false-div{
 }
 
 
+/* Animaciones by jose xd*/
 
+@keyframes headeranimation {
+    0% { background: linear-gradient(to bottom, white 0%, white 100%); }
+    50% { background: linear-gradient(to bottom, white 0%, white 100%); }
+    51% { background: linear-gradient(to bottom, var(--first-color) 1%, white 99%); }
+    52% { background: linear-gradient(to bottom, var(--first-color) 2%, white 98%); }
+    53% { background: linear-gradient(to bottom, var(--first-color) 3%, white 97%); }
+    54% { background: linear-gradient(to bottom, var(--first-color) 4%, white 96%); }
+    55% { background: linear-gradient(to bottom, var(--first-color) 5%, white 95%); }
+    56% { background: linear-gradient(to bottom, var(--first-color) 6%, white 94%); }
+    57% { background: linear-gradient(to bottom, var(--first-color) 7%, white 93%); }
+    58% { background: linear-gradient(to bottom, var(--first-color) 8%, white 92%); }
+    59% { background: linear-gradient(to bottom, var(--first-color) 9%, white 91%); }
+    60% { background: linear-gradient(to bottom, var(--first-color) 10%, white 90%); }
+    61% { background: linear-gradient(to bottom, var(--first-color) 11%, white 89%); }
+    62% { background: linear-gradient(to bottom, var(--first-color) 12%, white 88%); }
+    63% { background: linear-gradient(to bottom, var(--first-color) 13%, white 87%); }
+    64% { background: linear-gradient(to bottom, var(--first-color) 14%, white 86%); }
+    65% { background: linear-gradient(to bottom, var(--first-color) 15%, white 85%); }
+    66% { background: linear-gradient(to bottom, var(--first-color) 16%, white 84%); }
+    67% { background: linear-gradient(to bottom, var(--first-color) 17%, white 83%); }
+    68% { background: linear-gradient(to bottom, var(--first-color) 18%, white 82%); }
+    69% { background: linear-gradient(to bottom, var(--first-color) 19%, white 81%); }
+    70% { background: linear-gradient(to bottom, var(--first-color) 20%, white 80%); }
+    71% { background: linear-gradient(to bottom, var(--first-color) 21%, white 79%); }
+    72% { background: linear-gradient(to bottom, var(--first-color) 22%, white 78%); }
+    73% { background: linear-gradient(to bottom, var(--first-color) 23%, white 77%); }
+    74% { background: linear-gradient(to bottom, var(--first-color) 24%, white 76%); }
+    75% { background: linear-gradient(to bottom, var(--first-color) 25%, white 75%); }
+    76% { background: linear-gradient(to bottom, var(--first-color) 26%, white 74%); }
+    77% { background: linear-gradient(to bottom, var(--first-color) 27%, white 73%); }
+    78% { background: linear-gradient(to bottom, var(--first-color) 28%, white 72%); }
+    79% { background: linear-gradient(to bottom, var(--first-color) 29%, white 71%); }
+    80% { background: linear-gradient(to bottom, var(--first-color) 30%, white 70%); }
+    81% { background: linear-gradient(to bottom, var(--first-color) 35%, white 65%); }
+    82% { background: linear-gradient(to bottom, var(--first-color) 40%, white 60%); }
+    83% { background: linear-gradient(to bottom, var(--first-color) 45%, white 55%); }
+    84% { background: linear-gradient(to bottom, var(--first-color) 50%, white 50%); }
+    85% { background: linear-gradient(to bottom, var(--first-color) 55%, white 45%); }
+    86% { background: linear-gradient(to bottom, var(--first-color) 60%, white 40%); }
+    87% { background: linear-gradient(to bottom, var(--first-color) 65%, white 35%); }
+    88% { background: linear-gradient(to bottom, var(--first-color) 70%, white 30%); }
+    89% { background: linear-gradient(to bottom, var(--first-color) 75%, white 25%); }
+    90% { background: linear-gradient(to bottom, var(--first-color) 80%, white 20%); }
+    91% { background: linear-gradient(to bottom, var(--first-color) 82%, white 18%); }
+    92% { background: linear-gradient(to bottom, var(--first-color) 84%, white 16%); }
+    93% { background: linear-gradient(to bottom, var(--first-color) 86%, var(--second-color) 14%); }
+    94% { background: linear-gradient(to bottom, var(--first-color) 88%, var(--second-color) 12%); }
+    95% { background: linear-gradient(to bottom, var(--first-color) 90%, var(--second-color) 10%); }
+    96% { background: linear-gradient(to bottom, var(--first-color) 92%, var(--second-color) 8%); }
+    97% { background: linear-gradient(to bottom, var(--first-color) 94%, var(--second-color) 6%); }
+    98% { background: linear-gradient(to bottom, var(--first-color) 96%, var(--second-color) 4%); }
+    99% { background: linear-gradient(to bottom, var(--first-color) 98%, var(--second-color) 2%); }
+    100% { background: linear-gradient(to bottom, var(--first-color), var(--second-color)); }
+}
+
+@keyframes info-header{
+   50%{
+    color: var(--first-color);
+   }
+   100%{
+    color: white;
+   }
+}
+
+@keyframes table-animation {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes nav-animation {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/*  ANIMACIONES CON SCROLL */
+
+/* Estado inicial - elementos ocultos */
+.second-section,
+.calculator,
+.we-info,
+.third-section,
+.benefit-info,
+.fourth-section,
+.office-container,
+.semi-footer {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado visible - cuando aparecen en pantalla */
+.second-section.visible,
+.calculator.visible,
+.we-info.visible,
+.third-section.visible,
+.benefit-info.visible,
+.fourth-section.visible,
+.office-container.visible,
+.semi-footer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animaciones personalizadas para diferentes elementos */
+
+/* Segunda sección (we-info) - desliza desde la izquierda */
+.we-info {
+    transform: translateX(-50px);
+}
+
+.we-info.visible {
+    transform: translateX(0);
+}
+
+/* Calculadora - desliza desde la derecha */
+.calculator {
+    transform: translateX(50px);
+}
+
+.calculator.visible {
+    transform: translateX(0);
+}
+
+/* Beneficios - aparecen desde abajo con rebote suave */
+.benefit-info {
+    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Footer - aparece desde abajo */
+.semi-footer {
+    transform: translateY(30px);
+}
+
+/* Retrasos escalonados para elementos múltiples - aparecen uno tras otro */
+.benefit-info:nth-child(1) { transition-delay: 0.1s; }
+.benefit-info:nth-child(2) { transition-delay: 0.2s; }
+.benefit-info:nth-child(3) { transition-delay: 0.3s; }
+.benefit-info:nth-child(4) { transition-delay: 0.4s; }
 
