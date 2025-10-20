@@ -30,3 +30,17 @@ if (document.readyState === 'loading') {
 } else {
     initScrollAnimations();
 }
+
+// Cerrar el menú móvil cuando se hace clic en un enlace
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (menuToggle && menuToggle.checked) {
+                menuToggle.checked = false;
+            }
+        });
+    });
+});

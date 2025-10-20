@@ -56,6 +56,44 @@ body{
 
 #menu-toggle:checked ~ .nav-menu{
     display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--first-color) 0%, var(--second-color) 100%);
+    z-index: 1000;
+    padding: 20px;
+    padding-bottom: 40px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-out;
+    border-radius: 0 0 20px 0;
+}
+
+/* Overlay para oscurecer el fondo cuando el menú está abierto */
+#menu-toggle:checked ~ .nav-menu::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 280px;
+    width: calc(100vw - 280px);
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.menu-icon{
+    position: relative;
+    z-index: 1001;
 }
 
 .menu-icon span{
@@ -63,15 +101,25 @@ body{
     cursor: pointer;
     color: white;
     margin-top: 5px;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+#menu-toggle:checked ~ .menu-icon span{
+    font-size: 30px;
 }
 
 @media (min-width: 950px) {
    .nav-menu{
         display: block;
+        position: static;
+        width: auto;
+        height: auto;
         margin: 0 auto;
         background-color: white;
         padding: 5px 50px;
         border-radius: 0px 0px 100px 100px;
+        box-shadow: none;
+        animation: nav-animation 1s ease-in-out;
     }
     .menu-icon{
           display: none;
@@ -86,17 +134,32 @@ body{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    position: absolute;
-    top: 60px;
-    left: 10px;
+    position: static;
+    margin-top: 40px;
+    padding: 0;
 }
 
 .nav-menu ul li a{
     text-decoration: none;
-    color: var(--second-color);
-    font-size: 1rem;
+    color: white;
+    font-size: 1.2rem;
     font-weight: bold;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-menu ul li a span{
+    font-size: 24px;
+}
+
+.nav-menu ul li a:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
 }
 
 
@@ -112,6 +175,25 @@ body{
         flex-direction: row;
         position: static;
         gap: 40px;
+        margin-top: 0;
+        align-items: center;
+    }
+
+    .nav-menu ul li a{
+        color: var(--second-color);
+        font-size: 1rem;
+        padding: 0;
+        background-color: transparent;
+        gap: 5px;
+    }
+
+    .nav-menu ul li a span{
+        display: none;
+    }
+
+    .nav-menu ul li a:hover{
+        background-color: transparent;
+        transform: none;
     }
 
     .nav-menu ul li:nth-child(4) a{
@@ -605,8 +687,7 @@ header .false-div{
 @media (min-width: 950px) {
     .benefits-img{
         width: 40%;
-        max-width: none;
-        
+        max-width: none;     
     }
 }
 
@@ -1072,7 +1153,6 @@ header .false-div{
 
 /* Estado inicial - elementos ocultos */
 .third-section,
-.benefit-info,
 .fourth-section,
 .office-container,
 .semi-footer {
@@ -1083,7 +1163,6 @@ header .false-div{
 
 /* Estado visible - cuando aparecen en pantalla */
 .third-section.visible,
-.benefit-info.visible,
 .fourth-section.visible,
 .office-container.visible,
 .semi-footer.visible {
@@ -1117,9 +1196,14 @@ header .false-div{
     transform: translateX(0);
 }
 
-/* Beneficios - aparecen desde abajo con rebote suave */
+/* Beneficios - solo fade in sin movimiento para evitar deformación */
 .benefit-info {
-    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+}
+
+.benefit-info.visible {
+    opacity: 1;
 }
 
 /* Footer - aparece desde abajo */
