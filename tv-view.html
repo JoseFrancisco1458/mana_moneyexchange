@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wexchange</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/tv.css') }}?v={{ config['VERSION'] }}">
+    <link rel="stylesheet" href="tv.css">
 </head>
 <body>
 <div class="background-logo"></div>
@@ -26,31 +26,21 @@
               <h3>Compra</h3>
               <h3>Venta</h3>
           </div>
-          {% for d in divisas %}
           <div class="tv-view-info">
-              <img src="{{ url_for('static', filename=d.bandera) }}" alt="{{ d.nombre }} Flag">
-              <h2>{{ d.nombre }}</h2>
+              <img src="img/usa.png" alt="Dolar Flag">
+              <h2>Dolar</h2>
               <p>
-                {% if d.compra == d.compra|int %}
-                  {{ d.compra|int }}
-                {% else %}
-                  {{ d.compra|round(2) }}
-                {% endif %}
+                1000
               </p>
               <p>
-                {% if d.venta == d.venta|int %}
-                  {{ d.venta|int }}
-                {% else %}
-                  {{ d.venta|round(2) }}
-                {% endif %}
+                2000
               </p>
           </div>
-          {% endfor %}
       </div>
     </div>
 
 <div class="tv-footer">
-    <h2>Design by Wexchange </h2>
+    <h2>Design by mana money exchange</h2>
 </div>
   
 </body>

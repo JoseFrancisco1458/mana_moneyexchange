@@ -909,8 +909,12 @@ header .false-div{
 .semi-footer-container ul li a{
     text-decoration: none;
     color: white;
-    font-size: 1.4rem;
+    font-size: 1rem;
     transition: 0.3s;
+}
+
+.semi-footer-container ul li a:hover{
+    color: var(--third-color);
 }
 
 .social-media ul{
@@ -926,6 +930,11 @@ header .false-div{
     width: 70px;
     height: auto;
     object-fit: cover;
+}
+
+.social-media ul li a:hover img{
+    transform: scale(1.1);
+    transition: 0.3s;
 }
 
 @media (min-width: 950px) {
@@ -944,10 +953,10 @@ header .false-div{
         padding-top: 20px;
     }
     .semi-footer-container p,.semi-footer-container ul a{ 
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .semi-footer-container h2{
-        font-size: clamp(1.5rem, 4dvw, 2.3rem);
+        font-size: clamp(1.4rem, 4dvw, 1.8rem);
     }   
     .social-media ul li a img{
         width: 50px;
@@ -1062,9 +1071,6 @@ header .false-div{
 /*  ANIMACIONES CON SCROLL */
 
 /* Estado inicial - elementos ocultos */
-.second-section,
-.calculator,
-.we-info,
 .third-section,
 .benefit-info,
 .fourth-section,
@@ -1076,9 +1082,6 @@ header .false-div{
 }
 
 /* Estado visible - cuando aparecen en pantalla */
-.second-section.visible,
-.calculator.visible,
-.we-info.visible,
 .third-section.visible,
 .benefit-info.visible,
 .fourth-section.visible,
@@ -1090,21 +1093,27 @@ header .false-div{
 
 /* Animaciones personalizadas para diferentes elementos */
 
-/* Segunda sección (we-info) - desliza desde la izquierda */
+/* Segunda sección (we-info) - desliza desde la izquierda SOLO EN X */
 .we-info {
+    opacity: 0;
     transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .we-info.visible {
+    opacity: 1;
     transform: translateX(0);
 }
 
-/* Calculadora - desliza desde la derecha */
+/* Calculadora - desliza desde la derecha SOLO EN X */
 .calculator {
+    opacity: 0;
     transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .calculator.visible {
+    opacity: 1;
     transform: translateX(0);
 }
 
